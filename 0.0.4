@@ -13,7 +13,7 @@ int main()
 
 	b = m * n;
 
-	do
+	while (k <= m * n)
 	{
 		for (j = c; j < n - c; j++)
 		{
@@ -22,7 +22,7 @@ int main()
 			a[c][j] = k++;
 		}
 
-		for (i = c + 1; i<m - c; i++)
+		for (i = c + 1; i < m - c; i++)
 		{
 			if (k > b)
 				break;
@@ -44,13 +44,18 @@ int main()
 		}
 
 		c++;
-	} while (k <= m * n);
+	}
 
 	for (i = 0; i < m; i++)
 	{
 		for (j = 0; j < n - 1; j++)
-			cout << a[i][j] << "\t";
-		cout << a[i][n - 1] << "\n";
+			if (a[i][j] < 10) {
+				cout << a[i][j] << "  ";
+			}
+			else {
+				cout << a[i][j] << " ";
+			}
+			cout << a[i][n - 1] << "\n";
 	}
 
 	for (i = 0; i < m; i++)
